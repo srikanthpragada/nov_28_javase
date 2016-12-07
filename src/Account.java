@@ -10,10 +10,16 @@ public class Account {
 		acno = no;
 		customer = name;
 	}
+	
+	public Account(int no, String name,double bal) {
+		acno = no;
+		customer = name;
+		balance = bal;
+	}
 
 	// methods
 	public void print() {
-		System.out.println(acno);
+		System.out.println(acno);  // compile-time polymorphism 
 		System.out.println(customer);
 		System.out.println(balance);
 	}
@@ -27,6 +33,13 @@ public class Account {
 			balance -= amount;
 		else
 			System.out.println("Sorry! Insufficient Balance!");
+	}
+	public double getBalance() {
+		return balance; 
+	}
+	
+	public String getCustomer() {
+		return customer; 
 	}
 
 }
