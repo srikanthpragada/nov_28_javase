@@ -4,42 +4,49 @@ public class Account {
 	private int acno;
 	private String customer;
 	private double balance;
+	// class variable
+	private static double minbal = 1000;
+
+	public static double getMinbal() {
+		return minbal;
+	}
 
 	// constructor
-	public Account(int no, String name) {
-		acno = no;
-		customer = name;
+	public Account(int acno, String customer) {
+		this.acno = acno;
+		this.customer = customer;
 	}
-	
-	public Account(int no, String name,double bal) {
-		acno = no;
-		customer = name;
-		balance = bal;
+
+	public Account(int acno, String customer, double balance) {
+		this.acno = acno;
+		this.customer = customer;
+		this.balance = balance;
 	}
 
 	// methods
 	public void print() {
-		System.out.println(acno);  // compile-time polymorphism 
-		System.out.println(customer);
-		System.out.println(balance);
+		System.out.println(this.acno); // compile-time polymorphism
+		System.out.println(this.customer);
+		System.out.println(this.balance);
 	}
 
 	public void deposit(double amount) {
-		balance += amount;
+		this.balance += amount;
 	}
 
 	public void withdraw(double amount) {
-		if (balance >= amount)
+		if (this.balance - minbal >= amount)
 			balance -= amount;
 		else
 			System.out.println("Sorry! Insufficient Balance!");
 	}
+
 	public double getBalance() {
-		return balance; 
+		return balance;
 	}
-	
+
 	public String getCustomer() {
-		return customer; 
+		return customer;
 	}
 
 }
