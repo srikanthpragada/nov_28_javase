@@ -6,10 +6,7 @@ public class Account {
 	private double balance;
 	// class variable
 	private static double minbal = 1000;
-
-	public static double getMinbal() {
-		return minbal;
-	}
+	private static final String bank = "ICICI";
 
 	// constructor
 	public Account(int acno, String customer) {
@@ -18,9 +15,17 @@ public class Account {
 	}
 
 	public Account(int acno, String customer, double balance) {
-		this.acno = acno;
-		this.customer = customer;
+		this(acno, customer);
 		this.balance = balance;
+	}
+
+	// static methods
+	public static double getMinbal() {
+		return minbal;
+	}
+	
+	public static void setMinbal(int minbal) {
+		Account.minbal = minbal;
 	}
 
 	// methods
@@ -30,7 +35,8 @@ public class Account {
 		System.out.println(this.balance);
 	}
 
-	public void deposit(double amount) {
+	public void deposit(final double amount) {
+		// amount = 100;
 		this.balance += amount;
 	}
 
