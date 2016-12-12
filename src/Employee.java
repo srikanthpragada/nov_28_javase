@@ -1,4 +1,4 @@
-class Employee {
+abstract class Employee {
 	protected String name;
 	protected int salary;
 	public Employee(String name, int salary) {
@@ -9,14 +9,15 @@ class Employee {
 		System.out.println(name);
 		System.out.println(salary);
 	}
-	public int getSalary(){
-		return salary;
+	public final String getName() {
+		return name;
 	}
+	public abstract int getSalary();
 }
 
 class Manager extends Employee {
 	protected int hra;
-	public Manager(String name, int salary, int hra) {
+	public Manager(String name, int salary,int hra) {
 		super(name,salary);
 		this.hra = hra;
 	}
@@ -26,6 +27,7 @@ class Manager extends Employee {
 		super.print();  
 		System.out.println(hra);
 	}
+	@Override
 	public int getSalary(){
 		return salary + hra;
 	}
