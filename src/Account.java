@@ -46,6 +46,10 @@ public class Account {
 		else
 			System.out.println("Sorry! Insufficient Balance!");
 	}
+	
+	public int getAcno() {
+		return acno;
+	}
 
 	public double getBalance() {
 		return balance;
@@ -54,5 +58,11 @@ public class Account {
 	public String getCustomer() {
 		return customer;
 	}
+
+	@Override
+	public String toString() {
+		return "Account [acno=" + acno + ", customer=" + customer + ", balance=" + balance + "]";
+	}
+	
 
 }

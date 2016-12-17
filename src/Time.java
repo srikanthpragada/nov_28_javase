@@ -21,6 +21,7 @@ public class Time implements Comparable<Time> {
 	//  0 Equal , > 0  First > Second, < 0  Second > First 
 	@Override
 	public int compareTo(Time other) {
+		// System.out.println("It has come");
 		return  this.totalSeconds() - other.totalSeconds();
 	}
 
