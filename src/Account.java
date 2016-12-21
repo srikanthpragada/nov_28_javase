@@ -40,11 +40,12 @@ public class Account {
 		this.balance += amount;
 	}
 
-	public void withdraw(double amount) {
+	public void withdraw(double amount) throws InsufficientBalanceException {
 		if (this.balance - minbal >= amount)
 			balance -= amount;
 		else
-			System.out.println("Sorry! Insufficient Balance!");
+			throw new InsufficientBalanceException();
+			 
 	}
 	
 	public int getAcno() {
