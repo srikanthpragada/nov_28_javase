@@ -19,9 +19,23 @@ public class NamesStream {
 		 names.add("Larry Page");
 		 names.add("Musk");
 		 
+		 		 
+		 double avg  = names.stream()
+				            .mapToInt( s -> s.length())
+				            .average()
+				            .getAsDouble();
+	 
+		 System.out.println(avg);
+		 
+		 names.stream().filter( s -> s.length() > avg).forEach(System.out::println);
+		 
+		 
 		 // names.stream().forEach( new PrintName());  // Consumer
 		 // names.stream().forEach(s -> System.out.println(s));  // Consumer
-		 names.stream().forEach(System.out::println);  // Consumer
+		 names.stream()
+		      .filter(s -> s.length() > 5)
+		      .sorted()
+		      .forEach(System.out::println);  // Consumer
 	}
 
 }
