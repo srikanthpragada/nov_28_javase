@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class PriceCalculator extends JFrame {
     
-    JComboBox  cmbModels;
+    JComboBox<String>  cmbModels;
     JRadioButton rbCash, rbCredit;
     JCheckBox  cbUps, cbPendrive;
     JLabel  lblAmount;
@@ -17,7 +17,7 @@ public class PriceCalculator extends JFrame {
         Container c = getContentPane();
         c.setLayout ( new GridLayout(4,1));
         
-        cmbModels = new JComboBox( new String[] 
+        cmbModels = new JComboBox<>( new String[] 
             {"Compaq Presario", "Dell Insipiron", "Hp Pavilion"});
 
         rbCash = new JRadioButton("Cash", true);
